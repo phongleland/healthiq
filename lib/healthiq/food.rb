@@ -1,0 +1,3 @@
+class Healthiq::Food
+  
+end
