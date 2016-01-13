@@ -21,6 +21,12 @@ class Healthiq::Food
     @glycemic_index = opts[:glycemic_index].to_i
   end
   
+  def bg_contribution_at(time)
+    min = (time - time_ate ) / 60
+    return self.bg_contribution_after_minute(min)
+  end
+  
+  protected
   def bg_contribution_after_minute(min)
     min = min.to_i
     return 0 if min <= 0
